@@ -1,0 +1,25 @@
+Improvement:
+
+We may have this kind of situations:
+
+E.g:
+
+	$$ John is a big cat.
+		OK
+
+	$$ Who is big?
+		Eh??
+
+	$$ Who is a cat?
+		Eh??
+
+	$$ Who is a big?
+		John
+
+This is because the given grammar only allows either 'is AR Ns' or 'is A' after 'P' in the sentence.
+While in most of the sentences in our life using 'is AR A Ns' grammar.
+
+It seems like 'John is a big cat' is parsed successfully, but it is parsed as 'John is a big' and ignored the last word 'cat'.
+Then it should return an error in parsing the sentence.
+
+In these cases, it is better to check the part of speech of each word in the statement language as well.
